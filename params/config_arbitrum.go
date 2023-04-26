@@ -59,6 +59,26 @@ func (c *ChainConfig) checkArbitrumCompatible(newcfg *ChainConfig, head *big.Int
 	return nil
 }
 
+func EcoBlockMainnetParams() ArbitrumChainParams {
+	return ArbitrumChainParams{
+		EnableArbOS:               true,
+		AllowDebugPrecompiles:     false,
+		DataAvailabilityCommittee: true,
+		InitialArbOSVersion:       1,
+		InitialChainOwner:         common.HexToAddress("0xF5155333728BdaF6FDC6328EFF68AA113A8700EC"),
+	}
+}
+
+func EcoBlockSepoliaTestnetParams() ArbitrumChainParams {
+	return ArbitrumChainParams{
+		EnableArbOS:               true,
+		AllowDebugPrecompiles:     false,
+		DataAvailabilityCommittee: true,
+		InitialArbOSVersion:       1,
+		InitialChainOwner:         common.HexToAddress("0x332d5db7B58C799b7012cD39D7Ad0f8Abb94d2f0"),
+	}
+}
+
 func ArbitrumOneParams() ArbitrumChainParams {
 	return ArbitrumChainParams{
 		EnableArbOS:               true,
@@ -136,6 +156,56 @@ func DisableArbitrumParams() ArbitrumChainParams {
 		DataAvailabilityCommittee: false,
 		InitialArbOSVersion:       0,
 		InitialChainOwner:         common.Address{},
+	}
+}
+
+func EcoBlockMainnetChainConfig() *ChainConfig {
+	return &ChainConfig{
+		ChainID:             big.NewInt(620),
+		HomesteadBlock:      big.NewInt(0),
+		DAOForkBlock:        nil,
+		DAOForkSupport:      true,
+		EIP150Block:         big.NewInt(0),
+		EIP150Hash:          common.Hash{},
+		EIP155Block:         big.NewInt(0),
+		EIP158Block:         big.NewInt(0),
+		ByzantiumBlock:      big.NewInt(0),
+		ConstantinopleBlock: big.NewInt(0),
+		PetersburgBlock:     big.NewInt(0),
+		IstanbulBlock:       big.NewInt(0),
+		MuirGlacierBlock:    big.NewInt(0),
+		BerlinBlock:         big.NewInt(0),
+		LondonBlock:         big.NewInt(0),
+		ArbitrumChainParams: EcoBlockMainnetParams(),
+		Clique: &CliqueConfig{
+			Period: 0,
+			Epoch:  0,
+		},
+	}
+}
+
+func EcoBlockSepoliaTestnetChainConfig() *ChainConfig {
+	return &ChainConfig{
+		ChainID:             big.NewInt(621),
+		HomesteadBlock:      big.NewInt(0),
+		DAOForkBlock:        nil,
+		DAOForkSupport:      true,
+		EIP150Block:         big.NewInt(0),
+		EIP150Hash:          common.Hash{},
+		EIP155Block:         big.NewInt(0),
+		EIP158Block:         big.NewInt(0),
+		ByzantiumBlock:      big.NewInt(0),
+		ConstantinopleBlock: big.NewInt(0),
+		PetersburgBlock:     big.NewInt(0),
+		IstanbulBlock:       big.NewInt(0),
+		MuirGlacierBlock:    big.NewInt(0),
+		BerlinBlock:         big.NewInt(0),
+		LondonBlock:         big.NewInt(0),
+		ArbitrumChainParams: EcoBlockSepoliaTestnetParams(),
+		Clique: &CliqueConfig{
+			Period: 0,
+			Epoch:  0,
+		},
 	}
 }
 
@@ -315,6 +385,8 @@ func ArbitrumRinkebyTestnetChainConfig() *ChainConfig {
 }
 
 var ArbitrumSupportedChainConfigs = []*ChainConfig{
+	EcoBlockMainnetChainConfig(),
+	EcoBlockSepoliaTestnetChainConfig(),
 	ArbitrumOneChainConfig(),
 	ArbitrumNovaChainConfig(),
 	ArbitrumRollupGoerliTestnetChainConfig(),
