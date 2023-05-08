@@ -63,7 +63,7 @@ func EcoBlockMainnetParams() ArbitrumChainParams {
 	return ArbitrumChainParams{
 		EnableArbOS:               true,
 		AllowDebugPrecompiles:     false,
-		DataAvailabilityCommittee: true,
+		DataAvailabilityCommittee: false,
 		InitialArbOSVersion:       1,
 		InitialChainOwner:         common.HexToAddress("0xF5155333728BdaF6FDC6328EFF68AA113A8700EC"),
 	}
@@ -73,7 +73,7 @@ func EcoBlockSepoliaTestnetParams() ArbitrumChainParams {
 	return ArbitrumChainParams{
 		EnableArbOS:               true,
 		AllowDebugPrecompiles:     false,
-		DataAvailabilityCommittee: true,
+		DataAvailabilityCommittee: false,
 		InitialArbOSVersion:       1,
 		InitialChainOwner:         common.HexToAddress("0x332d5db7B58C799b7012cD39D7Ad0f8Abb94d2f0"),
 	}
