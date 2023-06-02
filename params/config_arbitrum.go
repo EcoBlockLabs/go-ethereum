@@ -209,6 +209,56 @@ func EcoBlockSepoliaTestnetChainConfig() *ChainConfig {
 	}
 }
 
+func EcoBlockBscMainnetChainConfig() *ChainConfig {
+	return &ChainConfig{
+		ChainID:             big.NewInt(630),
+		HomesteadBlock:      big.NewInt(0),
+		DAOForkBlock:        nil,
+		DAOForkSupport:      true,
+		EIP150Block:         big.NewInt(0),
+		EIP150Hash:          common.Hash{},
+		EIP155Block:         big.NewInt(0),
+		EIP158Block:         big.NewInt(0),
+		ByzantiumBlock:      big.NewInt(0),
+		ConstantinopleBlock: big.NewInt(0),
+		PetersburgBlock:     big.NewInt(0),
+		IstanbulBlock:       big.NewInt(0),
+		MuirGlacierBlock:    big.NewInt(0),
+		BerlinBlock:         big.NewInt(0),
+		LondonBlock:         big.NewInt(0),
+		ArbitrumChainParams: EcoBlockMainnetParams(),
+		Clique: &CliqueConfig{
+			Period: 0,
+			Epoch:  0,
+		},
+	}
+}
+
+func EcoBlockBscTestnetChainConfig() *ChainConfig {
+	return &ChainConfig{
+		ChainID:             big.NewInt(631),
+		HomesteadBlock:      big.NewInt(0),
+		DAOForkBlock:        nil,
+		DAOForkSupport:      true,
+		EIP150Block:         big.NewInt(0),
+		EIP150Hash:          common.Hash{},
+		EIP155Block:         big.NewInt(0),
+		EIP158Block:         big.NewInt(0),
+		ByzantiumBlock:      big.NewInt(0),
+		ConstantinopleBlock: big.NewInt(0),
+		PetersburgBlock:     big.NewInt(0),
+		IstanbulBlock:       big.NewInt(0),
+		MuirGlacierBlock:    big.NewInt(0),
+		BerlinBlock:         big.NewInt(0),
+		LondonBlock:         big.NewInt(0),
+		ArbitrumChainParams: EcoBlockSepoliaTestnetParams(),
+		Clique: &CliqueConfig{
+			Period: 0,
+			Epoch:  0,
+		},
+	}
+}
+
 func ArbitrumOneChainConfig() *ChainConfig {
 	return &ChainConfig{
 		ChainID:             big.NewInt(42161),
@@ -387,6 +437,8 @@ func ArbitrumRinkebyTestnetChainConfig() *ChainConfig {
 var ArbitrumSupportedChainConfigs = []*ChainConfig{
 	EcoBlockMainnetChainConfig(),
 	EcoBlockSepoliaTestnetChainConfig(),
+	EcoBlockBscMainnetChainConfig(),
+	EcoBlockBscTestnetChainConfig(),
 	ArbitrumOneChainConfig(),
 	ArbitrumNovaChainConfig(),
 	ArbitrumRollupGoerliTestnetChainConfig(),
